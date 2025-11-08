@@ -5,10 +5,14 @@ import Spline from '@splinetool/react-spline';
 export default function Hero({ onGenerate }) {
   return (
     <section className="relative min-h-[90vh] w-full overflow-hidden bg-gradient-to-b from-[#06080f] to-[#090b12] text-white">
-      {/* 3D Spline Scene behind content */}
-      <div className="absolute inset-0 z-0">
-        {/* Replace the URL with a real Spline scene if desired */}
-        <Spline scene="https://prod.spline.design/3Jm3gqT1ZKXxwJ1w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      {/* 3D Spline Scene behind content (isolated layer; never negative z-index) */}
+      <div className="absolute inset-0 z-0 will-change-transform [contain:paint]">
+        <Spline
+          scene="https://prod.spline.design/3Jm3gqT1ZKXxwJ1w/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+          aria-hidden
+          role="presentation"
+        />
       </div>
 
       {/* Glow gradients layered above scene but not interactive */}
