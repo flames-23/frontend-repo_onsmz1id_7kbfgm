@@ -14,8 +14,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen w-full bg-[#06080f] text-white">
-      {/* Ambient particle field behind all content */}
-      <div className="fixed inset-0 z-0">
+      {/* Ambient particle field fixed behind all content; non-interactive */}
+      <div className="pointer-events-none fixed inset-0 z-0">
         <Particles className="h-full w-full opacity-70" density={90} />
       </div>
 

@@ -5,14 +5,19 @@ import Spline from '@splinetool/react-spline';
 export default function FinalCTA() {
   return (
     <section className="relative w-full overflow-hidden bg-[#070a12] py-28 text-white">
-      <div className="absolute inset-0">
+      {/* 3D Scene behind everything in this section */}
+      <div className="absolute inset-0 z-0">
         <Spline scene="https://prod.spline.design/oS8fZ2WbqgL8wq0H/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
-      <div className="pointer-events-none absolute inset-0">
+
+      {/* Top/bottom fades, non-interactive */}
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#070a12]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#070a12]" />
       </div>
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+
+      {/* Foreground content */}
+      <div className="relative z-20 mx-auto max-w-5xl px-6 text-center">
         <motion.h3
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

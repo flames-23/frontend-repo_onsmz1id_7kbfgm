@@ -5,21 +5,21 @@ import Spline from '@splinetool/react-spline';
 export default function Hero({ onGenerate }) {
   return (
     <section className="relative min-h-[90vh] w-full overflow-hidden bg-gradient-to-b from-[#06080f] to-[#090b12] text-white">
-      {/* 3D Spline Scene */}
-      <div className="absolute inset-0">
+      {/* 3D Spline Scene behind content */}
+      <div className="absolute inset-0 z-0">
         {/* Replace the URL with a real Spline scene if desired */}
         <Spline scene="https://prod.spline.design/3Jm3gqT1ZKXxwJ1w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      {/* Glow gradients */}
-      <div className="pointer-events-none absolute inset-0">
+      {/* Glow gradients layered above scene but not interactive */}
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
         <div className="absolute bottom-10 left-10 h-56 w-56 rounded-full bg-blue-500/10 blur-3xl" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pt-24 text-center">
+      {/* Content always on top */}
+      <div className="relative z-20 mx-auto flex max-w-7xl flex-col items-center px-6 pt-24 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
