@@ -2,7 +2,6 @@ import React from 'react';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
-import Testimonials from './components/Testimonials';
 import FinalCTA from './components/FinalCTA';
 import Particles from './components/Particles';
 
@@ -28,7 +27,6 @@ export default function App() {
         </div>
 
         <Features />
-        <Testimonials />
         <FinalCTA />
 
         <footer className="border-t border-white/10 bg-[#06080f] py-10 text-center text-xs text-cyan-100/60">
